@@ -65,6 +65,7 @@ function App() {
 
   const addNewCurrency = (option) => {
     dispatch(addCurrency(option));
+    setToCurrency(option);
   };
 
   return (
