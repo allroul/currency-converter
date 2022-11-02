@@ -24,6 +24,11 @@ function App() {
     headers: myHeaders,
   };
 
+  const addNewCurrency = (option) => {
+    dispatch(addCurrency(option));
+    setToCurrency(option);
+  };
+
   useEffect(() => {
     dispatch(fetchRates());
   }, [dispatch]);
@@ -61,11 +66,6 @@ function App() {
   const handleToAmountChange = (e) => {
     setAmount(e.target.value);
     setAmountInFromCurrency(false);
-  };
-
-  const addNewCurrency = (option) => {
-    dispatch(addCurrency(option));
-    setToCurrency(option);
   };
 
   return (
