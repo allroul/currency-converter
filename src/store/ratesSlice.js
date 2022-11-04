@@ -1,15 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-let myHeaders = new Headers();
-myHeaders.append('apikey', 'PlITwWgLMKTURa33gZ50dqZVaFfDzn4h');
-let requestUrl = 'https://api.apilayer.com/exchangerates_data/latest';
-
-let requestOptions = {
-  method: 'GET',
-  redirect: 'follow',
-  headers: myHeaders,
-};
+import { requestOptions, requestUrl } from '../components/FetchSettings';
 
 export const fetchRates = createAsyncThunk(
   'rates/fetchRates',
