@@ -53,6 +53,10 @@ body {
   font-size: 35px;
 }
 
+.currency-row:last-child {
+  margin-bottom: 0;
+}
+
 .input {
   width: 60%;
   min-height: 40px;
@@ -224,6 +228,33 @@ body {
   height: auto;
 }
 
+.converter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.reverse-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  left: 56.5%;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.reverse-icon:hover {
+  border-color: #fff;
+}
+
+.reverse-icon:hover circle {
+  fill: transparent;
+  transition: fill 0.3s ease;
+}
+
 @media screen and (max-width: 520px) {
   .active-option {
     background-image: linear-gradient(45deg, transparent 50%, gray 50%),
@@ -238,8 +269,10 @@ body {
       linear-gradient(135deg, transparent 50%, #243068 50%);
   }
 
-  .input {
-    margin-right: 10px;
+  .reverse-icon {
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
   .input,

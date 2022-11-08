@@ -30,10 +30,18 @@ const Converter = (props) => {
   let toAmount, fromAmount;
   if (amountInFromCurrency) {
     fromAmount = amount;
-    toAmount = amount * exchangeRate;
+    if (fromCurrency == props.toCurrency) {
+      toAmount = amount * exchangeRate;
+    } else {
+      toAmount = (amount * exchangeRate).toFixed(3);
+    }
   } else {
     toAmount = amount;
-    fromAmount = amount / exchangeRate;
+    if (fromCurrency == props.toCurrency) {
+      fromAmount = amount / exchangeRate;
+    } else {
+      fromAmount = (amount / exchangeRate).toFixed(3);
+    }
   }
 
   const handleFromAmountChange = (e) => {
@@ -46,6 +54,11 @@ const Converter = (props) => {
     setAmountInFromCurrency(false);
   };
 
+  const reverseCurrencies = () => {
+    setFromCurrency(props.toCurrency);
+    props.setToCurrency(fromCurrency);
+  };
+
   return (
     <div className="converter">
       <CurrencyRow
@@ -56,6 +69,20 @@ const Converter = (props) => {
         amount={fromAmount}
         firstDropDown
       />
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        onClick={reverseCurrencies}
+        className="reverse-icon">
+        <circle cx="16" cy="16" r="16" fill="#433B6D" />
+        <path
+          d="M19.4286 26L24 21.5556L20.5714 21.5556L20.5714 13.7778L18.2857 13.7778L18.2857 21.5556L14.8571 21.5556M17.1429 10.4444L12.5714 6L8 10.4444L11.4286 10.4444L11.4286 18.2222L13.7143 18.2222L13.7143 10.4444L17.1429 10.4444Z"
+          fill="white"
+        />
+      </svg>
       <CurrencyRow
         currencyOptions={filteredCurrencyOptions}
         selectedCurrency={props.toCurrency}
