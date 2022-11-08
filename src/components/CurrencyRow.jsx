@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 function CurrencyRow(props) {
   const {
@@ -50,14 +50,6 @@ function CurrencyRow(props) {
           <ul className="dropdown-content">{readyToShowOptions}</ul>
         </div>
       </div>
-
-      {/* <select value={selectedCurrency} className="select" onChange={onChangeCurrency}>
-        {currencyOptions.map((option, index) => (
-          <option value={option} key={index}>
-            {option}
-          </option>
-        ))}
-      </select> */}
     </div>
   );
 }
