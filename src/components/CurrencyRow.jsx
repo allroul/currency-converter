@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function CurrencyRow(props) {
   const {
@@ -11,10 +11,20 @@ function CurrencyRow(props) {
   } = props;
   const [searchValue, setSearchValue] = useState('');
   const [dropDownIsOpen, setDropDownIsOpen] = useState(false);
+  const dropDownRef = useRef();
+  const readyRef = dropDownRef.current;
 
   const searchOnChange = (event) => {
     setSearchValue(event.target.value);
   };
+
+  useEffect(() => {
+    document.body.addEventListener('click', (e) => {
+      if (dropDownIsOpen == true && !readyRef.contains(e.target)) {
+        setDropDownIsOpen(!dropDownIsOpen);
+      }
+    });
+  }, [dropDownIsOpen]);
 
   const readyToShowOptions = currencyOptions
     .filter((item) => item.toLowerCase().includes(searchValue.toLowerCase()))
@@ -37,6 +47,7 @@ function CurrencyRow(props) {
       <input type="number" className="input" value={amount.toString()} onChange={onChangeAmount} />
       <div
         className={dropDownIsOpen == true ? 'custom-dropdown open' : 'custom-dropdown'}
+        ref={dropDownRef}
         style={firstDropDown && { zIndex: '6' }}>
         <div className="active-option" onClick={() => setDropDownIsOpen(!dropDownIsOpen)}>
           {selectedCurrency}
