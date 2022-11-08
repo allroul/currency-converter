@@ -1,5 +1,5 @@
 let myHeaders = new Headers();
-myHeaders.append('apikey', 'bk7zknZiHr6OKyMwK213PV55EjRovC8j');
+myHeaders.append('apikey', 'qbYJYyUnKOcTAhPBH0dNG5Ufkbkoofri');
 export const requestUrl = 'https://api.apilayer.com/exchangerates_data/latest';
 
 export const requestOptions = {

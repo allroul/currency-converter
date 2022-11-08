@@ -51,14 +51,15 @@ const Converter = (props) => {
       <CurrencyRow
         currencyOptions={filteredCurrencyOptions}
         selectedCurrency={fromCurrency}
-        onChangeCurrency={(e) => setFromCurrency(e.target.value)}
+        onChangeCurrency={(e) => setFromCurrency(e.target.textContent)}
         onChangeAmount={handleFromAmountChange}
         amount={fromAmount}
+        firstDropDown
       />
       <CurrencyRow
         currencyOptions={filteredCurrencyOptions}
         selectedCurrency={props.toCurrency}
-        onChangeCurrency={(e) => props.setToCurrency(e.target.value)}
+        onChangeCurrency={(e) => props.setToCurrency(e.target.textContent)}
         onChangeAmount={handleToAmountChange}
         amount={toAmount}
       />
