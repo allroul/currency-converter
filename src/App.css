@@ -69,59 +69,6 @@ body {
   -webkit-appearance: none;
 }
 
-.select {
-  width: 30%;
-  min-height: 40px;
-  font-size: 25px;
-  padding: 5px 10px;
-  background-color: white;
-  border-radius: 50px;
-  display: inline-block;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 20px) calc(1em + -6px), calc(100% - 15px) calc(1em + -6px),
-    calc(100% - 2.5em);
-  background-size: 5px 5px, 5px 5px, 1px 1em;
-  background-repeat: no-repeat;
-  transition: all 0.3s ease;
-}
-
-.select:focus {
-  background-image: linear-gradient(45deg, #243068 50%, transparent 50%),
-    linear-gradient(135deg, transparent 50%, #243068 50%), linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 15px) 18px, calc(100% - 20px) 18px, calc(100% - 2.5em);
-  background-size: 5px 5px, 5px 5px, 1px 1em;
-  background-repeat: no-repeat;
-  outline: 0;
-}
-
-.select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
-}
-
-.select.add-new-btn {
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%);
-  background-position: calc(100% - 19.5px) calc(1em + -3px), calc(100% - 15px) calc(1em + -3px);
-  background-size: 5px 5px, 5px 5px;
-  width: max-content;
-}
-
-.select.add-new-btn:focus,
-.select.add-new-btn:hover {
-  background-image: linear-gradient(45deg, #fff 50%, transparent 50%),
-    linear-gradient(135deg, transparent 50%, #fff 50%);
-  background-position: calc(100% - 15px) 18px, calc(100% - 19.5px) 18px;
-  background-size: 5px 5px, 5px 5px;
-}
-
 .add-new-wrapper {
   margin-top: 44px;
 }
@@ -130,35 +77,6 @@ body {
   font-size: 18px;
   text-align: center;
   color: #fff;
-}
-
-.add-new-title span {
-  display: block;
-  margin-top: 10px;
-}
-
-.add-new-btn {
-  padding: 8px 40px 8px 30px;
-  font-size: 22px;
-  background-color: #fff;
-  color: #000;
-  margin: 16px auto 0;
-  display: block;
-  border-radius: 50px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.add-new-btn option {
-  color: #000;
-}
-
-.add-new-btn:hover,
-.add-new-btn:focus {
-  background-color: transparent;
-  color: #fff;
-  border-color: #fff;
 }
 
 .loading-title {

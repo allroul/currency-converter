@@ -45,7 +45,7 @@ function CurrencyRow(props) {
           <h2 className="dropdown-title">Select currency</h2>
           <div className="search-wrapper">
             <input placeholder="Search..." value={searchValue} onChange={searchOnChange} />
-            <img className="search-img" alt="search" src="currency-converter/search.png" />
+            <img className="search-img" alt="search" src="search.png" />
           </div>
           <ul className="dropdown-content">{readyToShowOptions}</ul>
         </div>
